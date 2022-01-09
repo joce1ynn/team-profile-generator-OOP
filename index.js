@@ -1,12 +1,3 @@
-// prompted for my team members and their information
-// HTML file is generated
-
-// click on an email address in the HTML
-// my default email program opens and populates the TO field of the email with the address
-
-// click on the GitHub username
-// that GitHub profile opens in a new tab
-
 // start the application
 // prompted to enter the team manager’s name, employee ID, email address, and office number
 
@@ -21,3 +12,12 @@
 
 // decide to finish building my team
 // exit the application, and the HTML is generated
+
+// prompted for my team members and their information
+// HTML file is generated
+
+// click on an email address in the HTML
+// my default email program opens and populates the TO field of the email with the address
+
+// click on the GitHub username
+// that GitHub profile opens in a new tab
