@@ -1,10 +1,5 @@
 const Employee = require("../lib/Employee");
 
-// getName()
-// getId()
-// getEmail()
-// getRole() // Returns 'Employee'
-
 test("creates an emplyee object", () => {
   const emplyee = new Employee("Jack", "123", "jack@gmail.com");
   expect(emplyee.name).toBe("Jack");
