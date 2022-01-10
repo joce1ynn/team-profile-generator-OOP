@@ -1,12 +1,3 @@
-// enter the team manager’s name, employee ID, email address, and office number
-// presented with a menu with the option to add an engineer or an intern or to finish building my team
-
-// select the engineer option
-// prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-
-// select the intern option
-// prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-
 // decide to finish building my team
 // exit the application, and the HTML is generated
 
@@ -32,43 +23,45 @@ let teamData = [];
 
 // prompted questions
 const addManager = () => {
-  return inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "name",
-        message: "Please provide the manager's name:",
-      },
-      {
-        type: "input",
-        name: "id",
-        message: "Please provide the manager's ID:",
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "Please provide the manager's e-mail:",
-      },
-      {
-        type: "input",
-        name: "officeNumber",
-        message: "Please provide the manager's office number:",
-      },
-    ])
+  return (
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "name",
+          message: "Please provide the manager's name:",
+        },
+        {
+          type: "input",
+          name: "id",
+          message: "Please provide the manager's ID:",
+        },
+        {
+          type: "input",
+          name: "email",
+          message: "Please provide the manager's e-mail:",
+        },
+        {
+          type: "input",
+          name: "officeNumber",
+          message: "Please provide the manager's office number:",
+        },
+      ])
 
-    // add manager to the team data
-    .then((managerData) => {
-      const { name, id, email, officeNumber } = managerData;
-      const manager = new Manager(name, id, email, officeNumber);
-      teamData.push(manager);
-    });
+      // add manager to the team data
+      .then((managerData) => {
+        const { name, id, email, officeNumber } = managerData;
+        const manager = new Manager(name, id, email, officeNumber);
+        teamData.push(manager);
+      })
+  );
 };
 
 const addEmployee = () => {
   console.log(`
-    =================
+    ==================
     Add a New Employee
-    =================
+    ==================
     `);
 
   return inquirer
@@ -77,14 +70,7 @@ const addEmployee = () => {
         type: "list",
         name: "role",
         message: "Please provide the employee's role:",
-        choices: [
-          {
-            name: "Engineer",
-          },
-          {
-            name: "Intern",
-          },
-        ],
+        choices: ["Engineer", "Intern"],
       },
       {
         type: "input",
@@ -125,7 +111,8 @@ const addEmployee = () => {
       },
     ])
     .then((employeeData) => {
-      const { role, name, id, email, github, school, newEmployee } = employeeData;
+      const { role, name, id, email, github, school, newEmployee } =
+        employeeData;
 
       //add new employee to the team data
       if (role === "Engineer") {
@@ -148,5 +135,13 @@ const addEmployee = () => {
 addManager()
   .then(addEmployee)
   .then((teamData) => {
-    console.log(teamData);
+    const pageHTML = generatePage(teamData);
+
+    fs.writeFile("./dist/index.html", pageHTML, (err) => {
+      if (err) throw new Error(err);
+
+      console.log(
+        "Team profile page created! "
+      );
+    });
   });
