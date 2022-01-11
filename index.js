@@ -135,13 +135,12 @@ const addEmployee = () => {
 addManager()
   .then(addEmployee)
   .then((teamData) => {
+    console.log(teamData);
     const pageHTML = generatePage(teamData);
 
     fs.writeFile("./dist/index.html", pageHTML, (err) => {
       if (err) throw new Error(err);
 
-      console.log(
-        "Team profile page created! "
-      );
+      console.log("Team profile page created! ");
     });
   });
