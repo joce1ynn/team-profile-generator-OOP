@@ -1,11 +1,3 @@
-// decide to finish building my team
-// exit the application, and the HTML is generated
-
-// prompted for my team members and their information
-// HTML file is generated
-
-// click on an email address in the HTML
-// my default email program opens and populates the TO field of the email with the address
 
 // click on the GitHub username
 // that GitHub profile opens in a new tab
@@ -50,9 +42,10 @@ const addManager = () => {
 
       // add manager to the team data
       .then((managerData) => {
-        const { name, id, email, officeNumber } = managerData;
+        const { name, id, email, officeNumber} = managerData;
         const manager = new Manager(name, id, email, officeNumber);
         teamData.push(manager);
+        console.log(manager.getRole())
       })
   );
 };

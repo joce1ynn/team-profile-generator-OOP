@@ -8,7 +8,7 @@ const generateManager = (manager) => {
   </div>
   <ul class="list-group my-5 mx-4 bg-dark">
     <li class="list-group-item">ID: ${manager.id}</li>
-    <li class="list-group-item">Email: ${manager.email}</li>
+    <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
     <li class="list-group-item">Office number: ${manager.officeNumber}</li>
   </ul>
 </div>
@@ -25,8 +25,8 @@ const generateEngineer = (engineer) => {
   </div>
   <ul class="list-group my-5 mx-4 bg-dark">
     <li class="list-group-item">ID: ${engineer.id}</li>
-    <li class="list-group-item">Email: ${engineer.email}</li>
-    <li class="list-group-item">Github: ${engineer.github}</li>
+    <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+    <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
   </ul>
 </div>
   `;
@@ -42,7 +42,7 @@ const generateIntern = (intern) => {
   </div>
   <ul class="list-group my-5 mx-4 bg-dark">
     <li class="list-group-item">ID: ${intern.id}</li>
-    <li class="list-group-item">Email: ${intern.email}</li>
+    <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
     <li class="list-group-item">School: ${intern.school}</li>
   </ul>
 </div>
@@ -54,21 +54,20 @@ const generateTeam = (data) => {
 
   // loop the team card
   for (let i = 1; i < data.length; i++) {
-    const employee = data[i];
-    const role = employee.getRole();
-
+    let role = data[i].getRole();
+    console.log(role);
     if (role === "Manager") {
-      const managerCard = generateManager(employee);
+      const managerCard = generateManager(data[i]);
       teamCard.push(managerCard);
     }
 
     if (role === "Engineer") {
-      const engineerCard = generateEngineer(employee);
+      const engineerCard = generateEngineer(data[i]);
       teamCard.push(engineerCard);
     }
 
     if (role === "Intern") {
-      const internCard = generateIntern(employee);
+      const internCard = generateIntern(data[i]);
       teamCard.push(internCard);
     }
   }
