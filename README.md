@@ -13,9 +13,11 @@ The team profile generator app can create a webpage that displays your team's ba
 This app uses JEST to perform units test for each class. By running the following command, you will recieve the test results:
 ```npm run test```
 
-### Walkthrough Video
+* ### Walkthrough Video
+link: https://www.awesomescreenshot.com/video/6806374?key=cf599c0e18a42a045b8eb35606232048
 
-### Example Webpage Screenshot
+
+* ### Example Webpage Screenshot
 ![Screenshot](/dist/Team.png)
 
 ## Contribution
