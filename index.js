@@ -45,7 +45,6 @@ const addManager = () => {
         const { name, id, email, officeNumber} = managerData;
         const manager = new Manager(name, id, email, officeNumber);
         teamData.push(manager);
-        console.log(manager.getRole())
       })
   );
 };
@@ -128,7 +127,6 @@ const addEmployee = () => {
 addManager()
   .then(addEmployee)
   .then((teamData) => {
-    console.log(teamData);
     const pageHTML = generatePage(teamData);
 
     fs.writeFile("./dist/index.html", pageHTML, (err) => {

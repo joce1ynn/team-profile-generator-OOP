@@ -53,9 +53,9 @@ const generateTeam = (data) => {
   let teamCard = [];
 
   // loop the team card
-  for (let i = 1; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     let role = data[i].getRole();
-    console.log(role);
+
     if (role === "Manager") {
       const managerCard = generateManager(data[i]);
       teamCard.push(managerCard);
