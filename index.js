@@ -1,7 +1,3 @@
-
-// click on the GitHub username
-// that GitHub profile opens in a new tab
-
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generatePage = require("./src/page-template");
