@@ -14,8 +14,7 @@ This app uses JEST to perform units test for each class. By running the followin
 ```npm run test```
 
 * ### Walkthrough Video
-link: https://www.awesomescreenshot.com/video/6806374?key=cf599c0e18a42a045b8eb35606232048
-
+[The walkthrough video link](https://www.awesomescreenshot.com/video/6806374?key=cf599c0e18a42a045b8eb35606232048)
 
 * ### Example Webpage Screenshot
 ![Screenshot](/dist/Team.png)
